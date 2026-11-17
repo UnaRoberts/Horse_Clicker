@@ -11,7 +11,23 @@ using System.Threading.Tasks;
 
 namespace HorseClicker
 {
-    internal class Scene
+    public abstract class Scene
     {
+        private readonly List<GameComponent> _components = [];
+
+        public void Add(GameComponent c) => _components.Add(c);
+        public void Remove(GameComponent c) => _components.Remove(c);
+
+        public void Update(float deltaTime)
+        {
+            foreach (GameComponent c in _components.ToList())
+                c.Update(deltaTime);
+        }
+
+        public void Draw()
+        {
+            foreach (DrawableGameComponent c in _components.OfType<DrawableGameComponent>().ToList())
+                c.Draw();
+        }
     }
 }

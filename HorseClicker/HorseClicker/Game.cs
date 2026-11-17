@@ -11,44 +11,64 @@ namespace HorseClicker
 {
     internal class Game
     {
-        Rectangle button = new Rectangle(300, 250, 200, 100);
-        public bool buttonPressed = false;
+        private readonly SceneManager scenes;
 
-        Texture2D horseTexture;
-
-
-        public void LoadContent()
+        public Game()
         {
-            horseTexture = Raylib.LoadTexture("../../../tempAssets/Bat_Sticker.png");
+            scenes = new SceneManager(new FirstScene());
+            // This is where we would add more scenes to the game
         }
 
         public void Update()
         {
-
-            Vector2 mousePos = Raylib.GetMousePosition();
-
-            bool mouseOverButton =
-                Raylib.CheckCollisionPointRec(mousePos, button);
-
-            if (mouseOverButton &&
-                Raylib.IsMouseButtonPressed(MouseButton.Left))
-            {
-                Console.WriteLine("Button clicked!");
-                buttonPressed = true;
-                //increment money
-            }
+            scenes.Update(Raylib.GetFrameTime());
         }
-
         public void Draw()
         {
-            Raylib.DrawTexture(horseTexture, 100, 100, Color.White);
-            Raylib.DrawRectangle(300, 250, 200, 100, Color.Red);
-
-            if (buttonPressed == true)
-            {
-                Raylib.DrawText("Button Clicked!", 12, 12, 20, Color.Black);
-                buttonPressed = false;
-            }
+            scenes.Draw();
         }
+
+
+        //SceneManager scenes;
+
+        //Rectangle button = new Rectangle(300, 250, 200, 100);
+        //public bool buttonPressed = false;
+
+        //Texture2D horseTexture;
+
+
+        //public void LoadContent()
+        //{
+
+        //}
+
+        //public void Update()
+        //{
+
+        //    Vector2 mousePos = Raylib.GetMousePosition();
+
+        //    bool mouseOverButton =
+        //        Raylib.CheckCollisionPointRec(mousePos, button);
+
+        //    if (mouseOverButton &&
+        //        Raylib.IsMouseButtonPressed(MouseButton.Left))
+        //    {
+        //        Console.WriteLine("Button clicked!");
+        //        buttonPressed = true;
+        //        //increment money
+        //    }
+        //}
+
+        //public void Draw()
+        //{
+        //    Raylib.DrawTexture(horseTexture, 100, 100, Color.White);
+        //    Raylib.DrawRectangle(300, 250, 200, 100, Color.Red);
+
+        //    if (buttonPressed == true)
+        //    {
+        //        Raylib.DrawText("Button Clicked!", 12, 12, 20, Color.Black);
+        //        buttonPressed = false;
+        //    }
+        //}
     }
 }

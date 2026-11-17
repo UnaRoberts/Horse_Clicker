@@ -9,5 +9,9 @@ namespace HorseClicker
 {
     internal class Hay : Sprite
     {
+        public Hay(Texture2D texture) : base(texture)
+        {
+            // constructor
+        }
     }
 }

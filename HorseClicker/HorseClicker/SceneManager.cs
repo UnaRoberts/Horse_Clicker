@@ -9,7 +9,23 @@ using System.Threading.Tasks;
 
 namespace HorseClicker
 {
-    internal class SceneManager
+    public class SceneManager
     {
+        public Scene CurrentScene { get; private set; }
+
+        public SceneManager(Scene firstScene)
+        {
+            CurrentScene = firstScene;
+        }
+
+        public void ChangeScene(Scene newScene)
+        {
+            CurrentScene = newScene;
+        }
+
+        public void Update(float deltaTime) => CurrentScene.Update(deltaTime);
+
+        public void Draw() => CurrentScene.Draw();
+
     }
 }

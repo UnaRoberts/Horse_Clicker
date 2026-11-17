@@ -10,22 +10,21 @@ internal static class Program
     
     public static void Main()
     {
-        Game game = new Game();
 
         Raylib.InitWindow(800, 480, "Hello, World");
         Raylib.SetTargetFPS(60);
 
+        Game game = new Game();
+
         while (!Raylib.WindowShouldClose())
         {
-            game.LoadContent();
             game.Update();
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.White);
             game.Draw();
             Raylib.EndDrawing();
         }
-     
-    Raylib.CloseWindow();
         
+        Raylib.CloseWindow();
     }
 }

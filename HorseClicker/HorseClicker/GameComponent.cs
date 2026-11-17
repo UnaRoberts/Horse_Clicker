@@ -11,7 +11,7 @@ namespace HorseClicker
         public bool Enabled = true;
         public int UpdateOrder;
         public virtual void Initialize() { }
-        public virtual void Update(float dt) { }
+        public virtual void Update(float deltaTime) { }
         public virtual void Unload() { }
     }
 
@@ -21,5 +21,4 @@ namespace HorseClicker
         public int DrawOrder;
         public virtual void Draw() { }
     }
-
 }

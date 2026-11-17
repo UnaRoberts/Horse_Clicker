@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace HorseClicker
 {
-    public abstract class Sprite : GameComponent
+    public abstract class Sprite : DrawableGameComponent
     {
         public Texture2D Texture;
         public Rectangle Source; // part of the texture to draw (for sprite sheets)
@@ -12,7 +12,6 @@ namespace HorseClicker
         public float Rotation; // degrees
         public float Scale = 1f;
         public Color Tint = Color.White;
-        public bool Visible = true;
 
         protected Sprite(Texture2D texture)
         {
@@ -29,9 +28,9 @@ namespace HorseClicker
             Position.Y - Height * Pivot.Y,
             Width, Height);
 
-        public virtual void Update(float dt) { }
+        public override void Update(float deltaTime) { }
 
-        public virtual void Draw()
+        public override void Draw()
         {
             if (!Visible) return;
             var dest = new Rectangle(Position.X, Position.Y, Width, Height);
