@@ -35,6 +35,7 @@ namespace HorseClicker
             {
                 Console.WriteLine("Button clicked!");
                 buttonPressed = true;
+                //increment money
             }
         }
 
@@ -48,20 +49,6 @@ namespace HorseClicker
                 Raylib.DrawText("Button Clicked!", 12, 12, 20, Color.Black);
                 buttonPressed = false;
             }
-            
-
-            //if (buttonPressed == true)
-            //    {
-            //    Raylib.DrawText("Button Clicked!", 12, 12, 20, Color.Black);
-            //    buttonPressed = false;
-            //    
-            //    //
-            //    }
-
-
         }
-
-
-
     }
 }
