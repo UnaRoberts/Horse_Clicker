@@ -19,19 +19,15 @@ internal static class Program
 
         while (!Raylib.WindowShouldClose())
         {
-
+            game.LoadContent();
             game.Update();
-
-
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.White);
-
-
             game.Draw();
-
+            Raylib.EndDrawing();
         }
-            Raylib.CloseWindow();
-
+     
+    Raylib.CloseWindow();
         
     }
 }
