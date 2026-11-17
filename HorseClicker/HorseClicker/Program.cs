@@ -1,24 +1,31 @@
-﻿using Raylib_cs;
+﻿using HorseClicker;
+using Raylib_cs;
 
 namespace HelloWorld;
 
 internal static class Program
 {
     [System.STAThread]
+
+    
     public static void Main()
     {
+        Game game = new Game();
+
         Raylib.InitWindow(800, 480, "Hello, World");
+        Raylib.SetTargetFPS(60);
 
         while (!Raylib.WindowShouldClose())
         {
+            game.LoadContent();
+            game.Update();
             Raylib.BeginDrawing();
             Raylib.ClearBackground(Color.White);
-
-            Raylib.DrawText("Hello, world!", 12, 12, 20, Color.Black);
-
+            game.Draw();
             Raylib.EndDrawing();
         }
-
-        Raylib.CloseWindow();
+     
+    Raylib.CloseWindow();
+        
     }
 }
