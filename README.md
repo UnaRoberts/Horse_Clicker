@@ -1,2 +1,2 @@
 # Horse_Clicker
-Clicking Game
+Clicking Game 
