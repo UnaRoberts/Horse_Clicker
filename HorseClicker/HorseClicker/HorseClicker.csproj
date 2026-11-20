@@ -18,7 +18,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="tempAssets\**" CopyToOutputDirectory="PreserveNewest" />
+		<None Update="Assets\**" CopyToOutputDirectory="PreserveNewest" />
 	</ItemGroup>
 
 </Project>

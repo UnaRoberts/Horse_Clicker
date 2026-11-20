@@ -1,4 +1,4 @@
-namespace HorseClicker.Utility;
+namespace HorseClicker;
 
 public class LoadGameFile
 {
