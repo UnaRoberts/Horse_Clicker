@@ -7,4 +7,4 @@ have too many horses? well.. that's where things get interesting.\
 \
 dependencies : [raylib c#](https://github.com/raylib-cs/raylib-cs)\
 languages : C#\
-.Net10 // Visual Studio + JetBrains Rider\
+.Net10 // Visual Studio + JetBrains Rider
