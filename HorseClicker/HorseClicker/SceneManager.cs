@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
 /// The scene manager is responsible for managing the different scenes in the game.
 /// It has a list of scenes and can switch between them as needed.
+/// </summary>
 
 namespace HorseClicker
 {

@@ -9,66 +9,26 @@ using System.Threading.Tasks;
 
 namespace HorseClicker
 {
+    /// <summary>
+    /// Do not put one billion things in here, 
+    /// </summary>
     internal class Game
     {
-        private readonly SceneManager scenes;
+        private readonly SceneManager scenes; // the scenes in the game
 
         public Game()
         {
-            scenes = new SceneManager(new FirstScene());
+            scenes = new SceneManager(new PenScene());
             // This is where we would add more scenes to the game
         }
 
         public void Update()
         {
-            scenes.Update(Raylib.GetFrameTime());
+            scenes.Update(Raylib.GetFrameTime()); // update the current scene
         }
         public void Draw()
         {
-            scenes.Draw();
+            scenes.Draw(); // draw the current scene
         }
-
-
-        //SceneManager scenes;
-
-        //Rectangle button = new Rectangle(300, 250, 200, 100);
-        //public bool buttonPressed = false;
-
-        //Texture2D horseTexture;
-
-
-        //public void LoadContent()
-        //{
-
-        //}
-
-        //public void Update()
-        //{
-
-        //    Vector2 mousePos = Raylib.GetMousePosition();
-
-        //    bool mouseOverButton =
-        //        Raylib.CheckCollisionPointRec(mousePos, button);
-
-        //    if (mouseOverButton &&
-        //        Raylib.IsMouseButtonPressed(MouseButton.Left))
-        //    {
-        //        Console.WriteLine("Button clicked!");
-        //        buttonPressed = true;
-        //        //increment money
-        //    }
-        //}
-
-        //public void Draw()
-        //{
-        //    Raylib.DrawTexture(horseTexture, 100, 100, Color.White);
-        //    Raylib.DrawRectangle(300, 250, 200, 100, Color.Red);
-
-        //    if (buttonPressed == true)
-        //    {
-        //        Raylib.DrawText("Button Clicked!", 12, 12, 20, Color.Black);
-        //        buttonPressed = false;
-        //    }
-        //}
     }
 }

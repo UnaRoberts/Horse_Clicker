@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace HorseClicker
 {
-    public class FirstScene : Scene
+    /// <summary>
+    /// Where the player's horses live. This is where the player will be able to see their horses and interact with them.
+    /// </summary>
+
+    public class PenScene : Scene
     {
-        public FirstScene()
+        public PenScene()
         {
             Texture2D horseTexture = Raylib.LoadTexture("../../../../tempAssets/Bat_Sticker.png");
 
