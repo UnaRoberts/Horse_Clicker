@@ -12,7 +12,7 @@ namespace HorseClicker
     /// A horse has:
     ///     Type
     ///     Size
-    ///     Healtha
+    ///     Health
     ///     Speed
     ///     Damage
     /// </summary>

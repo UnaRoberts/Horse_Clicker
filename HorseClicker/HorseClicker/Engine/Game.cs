@@ -21,15 +21,21 @@ namespace HorseClicker
         {
             // This is where we would add more scenes to the game
             scenes = new SceneManager();
-            sidebar = new Sidebar();
+            scenes.ChangeScene(SceneId.Pen);
+
+            sidebar = new Sidebar(scenes);
         }
 
         public void Update()
         {
-            scenes.Update(Raylib.GetFrameTime()); // update the current scene
+            float deltaTime = Raylib.GetFrameTime();
+
+            sidebar.Update(deltaTime);
+            scenes.Update(deltaTime); // update the current scene
         }
         public void Draw()
         {
+            sidebar.Draw();
             scenes.Draw(); // draw the current scene
         }
     }

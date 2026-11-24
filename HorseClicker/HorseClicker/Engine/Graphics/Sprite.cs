@@ -23,7 +23,7 @@ namespace HorseClicker
         public float Width => MathF.Abs(Source.Width) * Scale;
         public float Height => MathF.Abs(Source.Height) * Scale;
 
-        // Box for collision checks (ignores rotation); use with Raylib.CheckCollisionRecs
+        // Box for collision checks (ignores rotation); use with Raylib.CheckCollisionRecs()
         public Rectangle Bounds => new(
             Position.X - Width * Pivot.X,
             Position.Y - Height * Pivot.Y,
