@@ -15,11 +15,13 @@ namespace HorseClicker
     internal class Game
     {
         private readonly SceneManager scenes; // the scenes in the game
+        private readonly Sidebar sidebar; 
 
         public Game()
         {
-            scenes = new SceneManager(new PenScene());
             // This is where we would add more scenes to the game
+            scenes = new SceneManager();
+            sidebar = new Sidebar();
         }
 
         public void Update()

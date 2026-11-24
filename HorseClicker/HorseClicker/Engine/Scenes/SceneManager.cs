@@ -9,22 +9,33 @@ using System.Threading.Tasks;
 /// It has a list of scenes and can switch between them as needed.
 /// </summary>
 
+
 namespace HorseClicker
 {
+    public enum SceneId { Pen, Race, Battle }
     public class SceneManager
     {
-        public Scene CurrentScene { get; private set; }
+        private readonly Dictionary<SceneId, Scene> scenes = new(); // our list of scenes in the game
 
-        public SceneManager(Scene firstScene)
+        public SceneId CurrentId { get; private set; }
+        public Scene CurrentScene => scenes[CurrentId];
+
+
+        public SceneManager()
         {
-            CurrentScene = firstScene;
+            AddScene(SceneId.Pen, new PenScene());
+            AddScene(SceneId.Race, new RaceScene());
+            AddScene(SceneId.Pen, new BattleScene());
         }
-
-        public void ChangeScene(Scene newScene)
+        public void AddScene(SceneId id, Scene scene) 
+        { 
+            scenes[id] = scene; 
+        }
+        public void ChangeScene(SceneId id)
         {
-            CurrentScene = newScene;
+            if (scenes.ContainsKey(id)) // ignore scenes that aren't registered yet
+                CurrentId = id;
         }
-
         public void Update(float deltaTime) => CurrentScene.Update(deltaTime);
 
         public void Draw() => CurrentScene.Draw();

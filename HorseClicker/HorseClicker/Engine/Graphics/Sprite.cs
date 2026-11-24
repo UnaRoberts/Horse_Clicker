@@ -12,6 +12,7 @@ namespace HorseClicker
         public float Rotation; // degrees
         public float Scale = 1f;
         public Color Tint = Color.White;
+        public bool showBounds = false;
 
         protected Sprite(Texture2D texture)
         {
@@ -28,14 +29,23 @@ namespace HorseClicker
             Position.Y - Height * Pivot.Y,
             Width, Height);
 
-        public override void Update(float deltaTime) { }
+        public override void Update(float deltaTime) 
+        { 
+            
+        }
 
         public override void Draw()
         {
             if (!Visible) return;
+
             var dest = new Rectangle(Position.X, Position.Y, Width, Height);
             var origin = new Vector2(Width * Pivot.X, Height * Pivot.Y);
             Raylib.DrawTexturePro(Texture, Source, dest, origin, Rotation, Tint);
+
+            if (showBounds == true)
+            {
+                Raylib.DrawRectangleLinesEx(Bounds, 1f, Color.Red);
+            }
         }
     }
 }
