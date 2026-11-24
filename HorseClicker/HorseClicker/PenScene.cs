@@ -16,8 +16,8 @@ namespace HorseClicker
     {
         public PenScene()
         {
-            Texture2D horseTexture = Raylib.LoadTexture("../../../../tempAssets/Bat_Sticker.png");
-
+            Texture2D horseTexture = Raylib.LoadTexture(Path.Combine(AppContext.BaseDirectory, "Assets", "tempAssets", "Bat_Sticker.png"));
+            
             Horse horse = new Horse(horseTexture);
             horse.Position = new Vector2(200, 200);
             Add(horse);

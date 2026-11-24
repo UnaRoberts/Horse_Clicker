@@ -1,0 +1,9 @@
+playerName: unknown
+horsesNumOwned: 0
+horsesNumTotal: 0
+hayNumOwned: 0
+hayNumTotal: 0
+hayPerSecond: 0
+tumbleweedNumOwned: 0
+hayBaleNumOwned: 0
+stableHandNumOwned: 0
