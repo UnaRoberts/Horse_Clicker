@@ -14,12 +14,30 @@ namespace HorseClicker
 
     public class PenScene : Scene
     {
+        private readonly List<Horse> horses = new();
+        private readonly Texture2D horseTexture;
+
+        public int HorseCount => horses.Count;
+
         public PenScene()
         {
-            Texture2D horseTexture = Raylib.LoadTexture(Path.Combine(AppContext.BaseDirectory, "Assets", "Horses", "Horse.png"));
-            Horse horse = new Horse(horseTexture);
-            horse.Position = new Vector2(200, 200);
+            horseTexture = Raylib.LoadTexture(Path.Combine(AppContext.BaseDirectory, "Assets", "Horses", "Horse.png"));
+            AddHorse(new Vector2(200, 200));
+        }
+
+        public void AddHorse(Vector2 position)
+        {
+            var horse = new Horse(horseTexture) { Position = position };
+            horses.Add(horse);
             Add(horse);
+        }
+
+        public override void Update(float deltaTime)
+        {
+            if (Raylib.IsKeyPressed(KeyboardKey.H)) // testing shortcut: add a horse
+                AddHorse(new Vector2(Random.Shared.Next(Sidebar.Width + 50, 700), Random.Shared.Next(50, 430)));
+
+            base.Update(deltaTime);
         }
     }
 }

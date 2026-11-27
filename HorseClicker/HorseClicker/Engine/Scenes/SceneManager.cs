@@ -23,9 +23,10 @@ namespace HorseClicker
 
         public SceneManager()
         {
-            AddScene(SceneId.Pen, new PenScene());
+            var pen = new PenScene();
+            AddScene(SceneId.Pen, pen);
             AddScene(SceneId.Race, new RaceScene());
-            AddScene(SceneId.Battle, new BattleScene());
+            AddScene(SceneId.Battle, new BattleScene(pen));
         }
         public void AddScene(SceneId id, Scene scene) 
         { 
@@ -35,6 +36,7 @@ namespace HorseClicker
         {
             if (scenes.ContainsKey(id)) // ignore scenes that aren't registered yet
                 CurrentId = id;
+                CurrentScene.OnEnter();
         }
         public void Update(float deltaTime) => CurrentScene.Update(deltaTime);
 

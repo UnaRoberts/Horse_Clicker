@@ -19,14 +19,16 @@ namespace HorseClicker
 
         public void Add(GameComponent c) => _components.Add(c);
         public void Remove(GameComponent c) => _components.Remove(c);
+        
+        public virtual void OnEnter() { } 
 
-        public void Update(float deltaTime)
+        public virtual void Update(float deltaTime)
         {
             foreach (GameComponent c in _components.ToList())
                 c.Update(deltaTime);
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
             foreach (DrawableGameComponent c in _components.OfType<DrawableGameComponent>().ToList())
                 c.Draw();
