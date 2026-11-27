@@ -25,7 +25,7 @@ namespace HorseClicker
         {
             AddScene(SceneId.Pen, new PenScene());
             AddScene(SceneId.Race, new RaceScene());
-            AddScene(SceneId.Pen, new BattleScene());
+            AddScene(SceneId.Battle, new BattleScene());
         }
         public void AddScene(SceneId id, Scene scene) 
         { 

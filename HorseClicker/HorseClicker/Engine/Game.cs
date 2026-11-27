@@ -19,6 +19,7 @@ namespace HorseClicker
 
         public Game()
         {
+            Console.Title = "HorseClicker";
             // This is where we would add more scenes to the game
             scenes = new SceneManager();
             scenes.ChangeScene(SceneId.Pen);
@@ -35,8 +36,8 @@ namespace HorseClicker
         }
         public void Draw()
         {
-            sidebar.Draw();
             scenes.Draw(); // draw the current scene
+            sidebar.Draw();
         }
     }
 }

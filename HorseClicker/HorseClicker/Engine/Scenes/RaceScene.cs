@@ -6,5 +6,6 @@ namespace HorseClicker
 {
     public class RaceScene : Scene
     {
+        
     }
 }
